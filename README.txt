@@ -1,0 +1,1 @@
+Welcome to Run Length Encoding!
