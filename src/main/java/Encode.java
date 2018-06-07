@@ -47,7 +47,7 @@ public class Encode {
     }
 
     public static void main(String[] args) {
-        var message = "Hello Dima";
+
 
         System.out.println(message);
         String example = "11d6g7j";
