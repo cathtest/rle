@@ -12,7 +12,7 @@ public class Encode {
                     && source.charAt(i) == source.charAt(i + 1)) {
 
 
-                runLength++;
+                runLength++;//some comment here
                 i++;
             }
             if ( runLength>9){
@@ -34,7 +34,7 @@ public class Encode {
         StringBuffer dest = new StringBuffer();
         Pattern pattern = Pattern.compile("[0-9]+|[a-zA-Z]");
         Matcher matcher = pattern.matcher(source);
-        while (matcher.find()) {
+        while (matcher.find()) { //make another changes
             int number = Integer.parseInt(matcher.group());
             matcher.find();
             while (number-- != 0) {
@@ -47,6 +47,9 @@ public class Encode {
     }
 
     public static void main(String[] args) {
+        var message = "Hello Kate";
+
+        System.out.println(message);
         String example = "11d6g7j";
 
         System.out.println(decode(example));
