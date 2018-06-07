@@ -37,7 +37,7 @@ public class Encode {
         while (matcher.find()) {
             int number = Integer.parseInt(matcher.group());
             matcher.find();
-            while (number-- != 0) {
+            while (number-- != 0) {//some changes
 
                 dest.append(matcher.group());
             }
