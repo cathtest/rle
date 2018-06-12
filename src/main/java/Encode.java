@@ -3,8 +3,10 @@ import java.util.regex.Pattern;
 
 public class Encode {
 
-    public static String encode(String source) {
-        StringBuffer dest = new StringBuffer();
+    public static String encoding(String source) {
+
+
+        StringBuffer bff = new StringBuffer();
         for (int i = 0; i < source.length(); i++) {
             int runLength = 1;
 
@@ -15,47 +17,59 @@ public class Encode {
                 runLength++;//some comment here
                 i++;
             }
+
             if ( runLength>9){
 
                 int r = runLength-9;
-                dest.append(source.charAt(i)).append(9).append(source.charAt(i)).append(runLength-9);
+                bff.append(source.charAt(i)).append(9).append(source.charAt(i)).append(runLength-9);
 
             }
             if (runLength<10){
-                dest.append(source.charAt(i)).append(1).append(runLength);
+                bff.append(source.charAt(i)).append(1).append(runLength);
             }
 
         }
 
-        return dest.toString();
+        return bff.toString();
     }
 
-    public static String decode(String source) {
-        StringBuffer dest = new StringBuffer();
+    public static String decoding(String source) {
+        StringBuffer bff = new StringBuffer();
         Pattern pattern = Pattern.compile("[0-9]+|[a-zA-Z]");
         Matcher matcher = pattern.matcher(source);
-        while (matcher.find()) { //make another changes
+        while (matcher.find()) {
             int number = Integer.parseInt(matcher.group());
             matcher.find();
-            while (number-- != 0) {//some changes
+            while (number-- != 0) {
 
-                dest.append(matcher.group());
+                bff.append(matcher.group());
             }
         }
 
-        return dest.toString();
+        return bff.toString();
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws MyException {
 
 
-        System.out.println(message);
-        String example = "11d6g7j";
 
-        System.out.println(decode(example));
-        System.out.println(encode(decode(example)));
+
+
+
+        String str = "jughuu89ukm88";
+
+        try {
+
+
+            System.out.println(decoding(str));
+            System.out.println(encoding(decoding(str)));
+
+
+        }        catch(NumberFormatException e){
+
+            System.out.println("NumberFormatException has been detected");
+        }
 
     }
 
 }
-
