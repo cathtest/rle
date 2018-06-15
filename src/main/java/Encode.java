@@ -49,7 +49,7 @@ public class Encode {
         return bff.toString();
     }
 
-    public static void main(String[] args) throws MyException {
+    public static void main(String[] args) throws NumberFormatException {
 
 
 
