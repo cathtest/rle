@@ -56,7 +56,7 @@ public class Encode {
 
 
 
-        String str = "jughuu89ukm88";
+        String str = "3d5g6h";
 
         try {
 
